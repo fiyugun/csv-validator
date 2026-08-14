@@ -10,14 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Verificar instalación
-        run: |
-          pip list
-          python --version
-          which python
-
-    
       - name: Descargar código
         uses: actions/checkout@v4
 
@@ -26,16 +18,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Instalar pandas
+        run: python -m pip install pandas
 
       - name: Verificar pandas
-        run: |
-          python -c "import pandas; print('Pandas OK:', pandas.__version__)"
-      
-      - name: Ejecutar validación
-        run: python scripts/validar_csv.py
-
-      - name: Verificar instalación
-        run: pip list
+        run: python -c "import pandas; print(pandas.__version__)"
 
       - name: Ejecutar validación
         run: python scripts/validar_csv.py
