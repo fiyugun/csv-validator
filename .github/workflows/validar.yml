@@ -13,7 +13,7 @@ jobs:
       - name: Descargar código
         uses: actions/checkout@v4
 
-      - name: Instalar Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -21,10 +21,10 @@ jobs:
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      
-      - name: Ver paquetes instalados
+          python -m pip install -r requirements.txt
+
+      - name: Verificar instalación
         run: pip list
-  
+
       - name: Ejecutar validación
         run: python scripts/validar_csv.py
