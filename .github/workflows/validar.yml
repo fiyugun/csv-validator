@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Verificar instalación
+        run: |
+          pip list
+          python --version
+          which python
+
+    
       - name: Descargar código
         uses: actions/checkout@v4
 
