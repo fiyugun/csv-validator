@@ -18,8 +18,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Instalar pandas
-        run: python -m pip install pandas
+      - name: Instalar dependencias
+        run: |
+          echo "Contenido del requirements:"
+          cat requirements.txt
+      
+          echo "Instalando..."
+          python -m pip install pandas
+      
+      - name: Verificar pandas
+        run: |
+          python -c "import pandas; print(pandas.__version__)"
 
       - name: Verificar pandas
         run: python -c "import pandas; print(pandas.__version__)"
