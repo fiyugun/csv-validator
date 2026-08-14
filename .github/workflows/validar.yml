@@ -30,8 +30,7 @@ jobs:
         run: |
           python -c "import pandas; print(pandas.__version__)"
 
-      - name: Verificar pandas
-        run: python -c "import pandas; print(pandas.__version__)"
+
 
       - name: Ejecutar validación
         run: python scripts/validar_csv.py
