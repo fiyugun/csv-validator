@@ -1,0 +1,21 @@
+# .github/workflows/tests.yml
+
+name: Ejecutar test
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ejecutar Pruebas
+        run: echo "Corriendo Pruebas en GitActions......"
+
+
+
+
