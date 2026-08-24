@@ -1,0 +1,14 @@
+name: mi primer workflow
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Saludar
+        run: echo "Hola mi workflow, de Luis el Home"
+
+
