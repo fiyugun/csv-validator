@@ -1,13 +1,13 @@
 name: ValidarVariablesEntorno
 on:
-  push: :
+  push:
 
-  jobs:
-    info:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Se Observa los datos del repositorio
-          run:  |
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Se Observa los datos del repositorio
+        run:  |
           echo "Repositorio : ${{ github.repository}}"
           echo "Branch: ${{ github.ref }}"
           echo "Actor: ${{ github.actor}}"
