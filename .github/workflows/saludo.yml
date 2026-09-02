@@ -12,9 +12,12 @@ jobs:
       SALUDO: Hola
     steps:
       - name: Saludar
-        
         run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_LA_SEMANA!, tu usuario es $USERNAME"
+      - name: VariablesEntorno
+        run: echo "Esto es un simple memsaje"
         env:
           NOMBRE: Davey Havok
           USERNAME: ${{github.actor}}
+
+      
 
