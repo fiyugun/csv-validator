@@ -1,0 +1,17 @@
+#Vamos a realizar un action dentro de un WorkFlow que me permita saludar con variables
+
+name: Saludo usando variables
+on:
+  workflow_dispatch
+env:
+  DIA_DE_LA_SEMANA: Martes
+jobs:
+  saludo-variables:
+    runs-on: ubuntu-latest
+    env:
+      SALUDO: Hola
+    steps:
+      - name: Saludar
+       run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_LA_SEMANA!"
+       env:
+           NOMBRE: Davey Havok
